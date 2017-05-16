@@ -1,0 +1,43 @@
+{
+    "missions": [
+        {
+            "enable": true,
+            "title": "下班打卡",
+            "details": "不要忘记打卡！！！\r不要忘记打卡！！！\r不要忘记打卡！！！\r",
+            "hour": 17,
+            "minute": 55,
+            "loop": "day"
+        },
+        {
+            "enable": true,
+            "title": "上班打卡",
+            "details": "不要忘记打卡！！！\r不要忘记打卡！！！\r不要忘记打卡！！！\r",
+            "hour": 8,
+            "minute": 55,
+            "loop": "day"
+        },
+        {
+            "enable": true,
+            "title": "坐直",
+            "details": "坐直了，马上！！！\r坐直了，马上！！！\r坐直了，马上！！！",
+            "minute": 0,
+            "loop": "hour"
+        },
+        {
+            "enable": true,
+            "title": "坐直",
+            "details": "坐直了，马上！！！\r坐直了，马上！！！\r坐直了，马上！！！",
+            "minute": 30,
+            "loop": "hour"
+        },
+        {
+            "enable": true,
+            "title": "周报",
+            "details": "该写周报了，马上！！！\r该写周报了，马上！！！\r该写周报了，马上！！！",
+            "DaysOfWeek": 5,
+            "hour": 17,
+            "minute": 0,
+            "loop": "week"
+        }
+    ]
+}
