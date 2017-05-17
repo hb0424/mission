@@ -12,7 +12,7 @@ gSysConfig = {"timerInterval": 60}
 
 
 def MessageBox(title, details):
-    ctypes.windll.user32.MessageBoxW(0, details, title, 4096)
+    ctypes.windll.user32.MessageBoxW(0, details, title + "test", 4096)
 
 
 def AsynMessageBox(title, details):
@@ -72,16 +72,28 @@ def ParseMisstionWeek(item):
 def ParseMisstionHour(item):
     title = item["title"]
     details = item["details"]
+    hour = item["hour"]
+    curTime = time.localtime(time.time())
+    start = item["start"]
+    end = item["end"]
+    if curTime.tm_min != 0:
+        return
+    if curTime.tm_hour < start or curTime.tm_hour > end:
+        return
+    if curTime.tm_hour % hour == 0:
+        AsynMessageBox(title, details)
+
+
+def ParseMisstionMinute(item):
+    title = item["title"]
+    details = item["details"]
     minute = item["minute"]
     curTime = time.localtime(time.time())
     start = item["start"]
     end = item["end"]
     if curTime.tm_hour < start or curTime.tm_hour > end:
         return
-    misstionDate = datetime.datetime(
-        curTime.tm_year, curTime.tm_mon, curTime.tm_mday, curTime.tm_hour, minute)
-    dateDiff = misstionDate.now() - misstionDate
-    if dateDiff.days >= 0 and dateDiff.seconds <= gSysConfig["timerInterval"]:
+    if curTime.tm_min % minute == 0:
         AsynMessageBox(title, details)
 
 
@@ -99,6 +111,8 @@ def MisstionTimer():
             ParseMisstionWeek(item)
         if loop == "hour":
             ParseMisstionHour(item)
+        if loop == "minute":
+            ParseMisstionMinute(item)
 
 
 def main():
