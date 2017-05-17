@@ -74,6 +74,10 @@ def ParseMisstionHour(item):
     details = item["details"]
     minute = item["minute"]
     curTime = time.localtime(time.time())
+    start = item["start"]
+    end = item["end"]
+    if curTime.tm_hour < start or curTime.tm_hour > end:
+        return
     misstionDate = datetime.datetime(
         curTime.tm_year, curTime.tm_mon, curTime.tm_mday, curTime.tm_hour, minute)
     dateDiff = misstionDate.now() - misstionDate

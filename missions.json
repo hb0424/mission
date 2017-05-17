@@ -21,14 +21,18 @@
             "title": "坐直",
             "details": "坐直了，马上！！！\r坐直了，马上！！！\r坐直了，马上！！！",
             "minute": 0,
-            "loop": "hour"
+            "loop": "hour",
+            "start": 9,
+            "end": 18
         },
         {
             "enable": true,
             "title": "坐直",
             "details": "坐直了，马上！！！\r坐直了，马上！！！\r坐直了，马上！！！",
             "minute": 30,
-            "loop": "hour"
+            "loop": "hour",
+            "start": 9,
+            "end": 18
         },
         {
             "enable": true,
