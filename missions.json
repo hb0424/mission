@@ -17,7 +17,7 @@
             "loop": "day"
         },
         {
-            "enable": true,
+            "enable": false,
             "title": "坐直",
             "details": "坐直了，马上！！！\r坐直了，马上！！！\r坐直了，马上！！！",
             "hour": 1,
@@ -29,7 +29,7 @@
             "enable": true,
             "title": "坐直",
             "details": "坐直了，马上！！！\r坐直了，马上！！！\r坐直了，马上！！！",
-            "minute": 5,
+            "minute": 15,
             "loop": "minute",
             "start": 9,
             "end": 18

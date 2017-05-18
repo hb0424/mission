@@ -6,13 +6,12 @@ import datetime
 import time
 import ctypes
 
-
 # 定时器时间间隔(单位：秒)
 gSysConfig = {"timerInterval": 60}
 
 
 def MessageBox(title, details):
-    ctypes.windll.user32.MessageBoxW(0, details, title + "test", 4096)
+    ctypes.windll.user32.MessageBoxW(0, details, title, 4096)
 
 
 def AsynMessageBox(title, details):
