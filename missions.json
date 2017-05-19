@@ -18,7 +18,7 @@
         },
         {
             "enable": false,
-            "title": "坐直h",
+            "title": "坐直",
             "details": "坐直了，马上！！！\r坐直了，马上！！！\r坐直了，马上！！！",
             "hour": 1,
             "loop": "hour",
@@ -27,7 +27,7 @@
         },
         {
             "enable": true,
-            "title": "坐直m",
+            "title": "坐直",
             "details": "坐直了，马上！！！\r坐直了，马上！！！\r坐直了，马上！！！",
             "minute": 15,
             "loop": "minute",
