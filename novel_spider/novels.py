@@ -1,5 +1,16 @@
 gNoversConfig = {
     "websites":{
+        "www.pbtxt.com":{
+            "hostname": "",
+            "webname": "平板电子书网",
+            "book_name": "<h1>([\u4e00-\u9fa5]+)</h1>",
+            "book_author": "<span class=\"author\">文/(.*?)</span>",
+            "book_summary": "<div class=\"intro\" id=\"description.*?<p>(.*?)</p></div>",
+            "book_chapter": "<dd><a (.*?)</dd>",
+            "book_chapter_name": ">(.*)</a>",
+            "book_chapter_url": "href=\"(.*)\">",
+            "book_chapter_content": "<div id=\"content.*?</script></div>(.*)<div class=\"con_show_r\">"
+        },
         "www.biqudao.com":{
             "hostname": "https://www.biqudao.com",
             "webname": "笔趣岛",
@@ -48,6 +59,11 @@ gNoversConfig = {
         
     },
     "books":[
+        {
+            "urls":[
+                "http://www.pbtxt.com/103027/"
+            ]
+        },
         {
             "urls":[
                 "https://www.biqudao.com/bqge19874/"

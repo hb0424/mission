@@ -132,7 +132,11 @@ def parseHtml(url, webRoul):
             print("无法解析章节地址：" + bookChapter +
                   " " + webRoul["book_chapter_url"])
             continue
-        bookChapterUrl = webRoul["hostname"] + bookChapterUrls[0]
+
+        if len(webRoul["hostname"]) > 0:
+            bookChapterUrl = webRoul["hostname"] + bookChapterUrls[0]
+        else:
+            bookChapterUrl = url + bookChapterUrls[0]
         # 取chapter_id,没有chapter_id则增加新章节
         try:
             results = cursor.execute("select chapter_id, book_id, book_source, book_chapter_name from chapters \
