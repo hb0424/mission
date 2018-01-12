@@ -11,6 +11,35 @@ import ctypes
 from novels import gNoversConfig
 import sqlite3
 from string import Template
+#create table books
+#(
+# book_id INTEGER UNIQUE NOT NULL Primary Key autoincrement,
+# book_name VARCHAR(256) NOT NULL,
+# book_author VARCHAR(256),
+# book_summary VARCHAR(2048)
+#)
+#
+#create table chapters
+#(
+# chapter_id INTEGER UNIQUE NOT NULL Primary Key autoincrement,
+# book_id INTEGER  NOT NULL,
+# book_source VARCHAR(256) NOT NULL,
+# book_chapter_name VARCHAR(256),
+# book_chapter_url VARCHAR(2048),
+# book_chapter_content TEXT(100000)
+#)
+#
+#CREATE INDEX index_book_name
+#ON books (book_name)
+#
+#CREATE INDEX index_book_id
+#ON chapters (book_id)
+#
+#CREATE INDEX index_book_source
+#ON chapters (book_source)
+#
+#CREATE INDEX index_book_chapter_name
+#ON chapters (book_chapter_name)
 
 
 def GetCurFileDir():
@@ -164,7 +193,7 @@ def parseHtml(url, webRoul):
         except (sqlite3.Error,) as e:
             print('sqlite3 error: ' + str(e.args))
             continue
-    conn.commit()
+        conn.commit()
     conn.close()
     print("爬取完成：" + bookName)
 
@@ -178,6 +207,7 @@ def main():
             urlObj = urllib.parse.urlparse(url)
             webRoul = webSites[urlObj.hostname]
             parseHtml(url, webRoul)
+     print("爬取完成所有书目")
 
 
 if __name__ == '__main__':
