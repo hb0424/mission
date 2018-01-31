@@ -124,7 +124,7 @@ def parseHtml(url, webRoul):
     # chapter_id book_id book_source book_chapter_name book_chapter_url book_chapter_content
     # ############
     databasePath = GetCurFileDir()
-    databasePath += '\\novels.db'
+    databasePath += '\\novels.user.db'
     conn = sqlite3.connect(databasePath)
     bookId = 0
     try:
@@ -207,7 +207,7 @@ def main():
             urlObj = urllib.parse.urlparse(url)
             webRoul = webSites[urlObj.hostname]
             parseHtml(url, webRoul)
-     print("爬取完成所有书目")
+    print("爬取完成所有书目")
 
 
 if __name__ == '__main__':
